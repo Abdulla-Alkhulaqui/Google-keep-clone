@@ -137,9 +137,6 @@ let lightBoxEventLister = (e) => {
           id="note-text-lightbox"
         >${noteText}</textarea>
       </div>
-      <div class="save-btn-container">
-        <div class="save-note-btn"><button id="save-btn">Save</button></div>
-      </div>
     </div> 
     `;
 

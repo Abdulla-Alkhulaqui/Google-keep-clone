@@ -330,15 +330,4 @@ body main .notes-container .note-element-container .delete-btn-container i {
   color: #fff;
   font-size: 20px;
 }
-
-#lightbox.active .note-element .save-btn-container {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 10px;
-}
-
-#lightbox.active .note-element .save-btn-container button {
-  color: #fff;
-}
 /*# sourceMappingURL=App.css.map */
