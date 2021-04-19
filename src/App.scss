@@ -20,7 +20,7 @@ body {
   main {
     margin-bottom: 100px;
     .inputs-container {
-      width: 400px;
+      max-width: 400px;
       margin: 100px auto 100px auto;
       border: 0.5px solid rgba(255, 255, 255, 0.329);
       padding: 10px 20px;
