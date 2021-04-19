@@ -6,8 +6,8 @@ if (localStorage.getItem("keep-notes") == null) {
   localStorage.setItem("keep-notes", "[]");
   noteList = [];
 } else {
-  console.log(noteList);
   noteList = JSON.parse(localStorage.getItem("keep-notes"));
+  console.log(noteList);
   //getting the notes in the local storge
 }
 
