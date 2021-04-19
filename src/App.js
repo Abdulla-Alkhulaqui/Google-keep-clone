@@ -1,11 +1,15 @@
 let saveBtn = document.getElementById("save-btn");
 //setting the keep notes item in the local strge if it does not already exist
+let noteList;
 if (localStorage.getItem("keep-notes") == null) {
   localStorage.setItem("keep-notes", "[]");
+  noteList = [];
+} else {
+  noteList = JSON.parse(localStorage.getItem("keep-notes"));
+
+  //getting the notes in the local storge
+  console.log(noteList);
 }
-//getting the notes in the local storge
-let noteList = JSON.parse(localStorage.getItem("keep-notes"));
-console.log(noteList);
 
 saveBtn.addEventListener("click", () => {
   let newNoteTitle = document.getElementById("note-title").value;
