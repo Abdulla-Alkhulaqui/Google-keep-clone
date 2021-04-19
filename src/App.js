@@ -1,14 +1,12 @@
 let saveBtn = document.getElementById("save-btn");
 //setting the keep notes item in the local strge if it does not already exist
 let noteList;
-console.log("localStora");
+//getting the notes in the local storge
 if (localStorage.getItem("keep-notes") == null) {
   localStorage.setItem("keep-notes", "[]");
   noteList = [];
 } else {
   noteList = JSON.parse(localStorage.getItem("keep-notes"));
-  console.log(noteList);
-  //getting the notes in the local storge
 }
 
 saveBtn.addEventListener("click", () => {
@@ -54,7 +52,6 @@ let renderNotes = () => {
   noteContainer.innerHTML = "";
   if (noteList.length !== 0) {
     noteList.map((note) => {
-      console.log(note.text);
       noteContainer.innerHTML += `
       <div class="note-element-container">
         <div class="note-element" onClick="lightBoxEventLister(this);">
