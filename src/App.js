@@ -1,6 +1,7 @@
 let saveBtn = document.getElementById("save-btn");
 //setting the keep notes item in the local strge if it does not already exist
 let noteList;
+console.log(localStorage.getItem("keep-notes"));
 if (localStorage.getItem("keep-notes") == null) {
   localStorage.setItem("keep-notes", "[]");
   noteList = [];
