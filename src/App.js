@@ -1,14 +1,11 @@
 let saveBtn = document.getElementById("save-btn");
 //setting the keep notes item in the local strge if it does not already exist
-if (localStorage.getItem("keep-notes") == false) {
-  localStorage.setItem("keep-notes", "[{}]");
+if (localStorage.getItem("keep-notes") == null) {
+  localStorage.setItem("keep-notes", "[]");
 }
 //getting the notes in the local storge
 let noteList = JSON.parse(localStorage.getItem("keep-notes"));
-
-window.addEventListener("load", () => {
-  renderNotes();
-});
+console.log(noteList);
 
 saveBtn.addEventListener("click", () => {
   let newNoteTitle = document.getElementById("note-title").value;
@@ -53,6 +50,7 @@ let renderNotes = () => {
   noteContainer.innerHTML = "";
   if (noteList.length !== 0) {
     noteList.map((note) => {
+      console.log(note.text);
       noteContainer.innerHTML += `
       <div class="note-element-container">
         <div class="note-element" onClick="lightBoxEventLister(this);">
@@ -160,3 +158,7 @@ let lightBoxEventLister = (e) => {
     lightbox.classList.remove("active");
   });
 };
+
+window.addEventListener("load", () => {
+  renderNotes();
+});
