@@ -5,10 +5,9 @@ if (localStorage.getItem("keep-notes") == null) {
   localStorage.setItem("keep-notes", "[]");
   noteList = [];
 } else {
-  noteList = JSON.parse(localStorage.getItem("keep-notes"));
-
-  //getting the notes in the local storge
   console.log(noteList);
+  noteList = JSON.parse(localStorage.getItem("keep-notes"));
+  //getting the notes in the local storge
 }
 
 saveBtn.addEventListener("click", () => {
