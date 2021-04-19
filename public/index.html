@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="https://assets.materialup.com/uploads/ef2f0ee0-6f32-478c-b160-f52a308ee211/preview"
+    />
+    <link rel="stylesheet" href="../src/App.css" />
+    <script src="../src/App.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/d4ae4da0b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Note taking app</title>
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <img src="google-keep-logo.png" alt="" />
+          <p>keep</p>
+        </div>
+        <div class="head-title">
+          <h1>Note taking app</h1>
+        </div>
+        <div class="my-pic"><img src="DSC_7651.JPG" alt="" /></div>
+      </div>
+      <div class="side-bar"></div>
+    </header>
+
+    <main>
+      <div class="inputs-container">
+        <div class="title-input">
+          <input type="text" id="note-title" placeholder="Title" />
+        </div>
+        <div class="note-input">
+          <textarea
+            name="note"
+            placeholder="Take a note..."
+            cols="30"
+            rows="10"
+            id="note-text"
+          ></textarea>
+        </div>
+        <div class="save-btn-container">
+          <div class="save-note-btn"><button id="save-btn">Save</button></div>
+        </div>
+      </div>
+
+      <div class="notes-container"></div>
+    </main>
+
+    <!-- <div id="lightbox"></div> -->
+  </body>
+</html>
