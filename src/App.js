@@ -73,15 +73,15 @@ let renderNotes = () => {
        
         <div class="change-color">
           <div class="color-box">
-            <button class="color" style="background-color:#1b1b1b;"></button>
+            <button class="color" style="background-color:#202124;"></button>
             <button class="color" style="background-color:#143642;"></button>
-            <button class="color" style="background-color:#8A3033;"></button>
-            <button class="color" style="background-color:#020887;"></button>
-            <button class="color" style="background-color:#C6EBBE;"></button>
-            <button class="color" style="background-color:#7AC74F;"></button>
-            <button class="color" style="background-color:#EC9A29;"></button>
-            <button class="color" style="background-color:#A8201A;"></button>
-            <button class="color" style="background-color:#0F8B8D;"></button>
+            <button class="color" style="background-color:#A71D31;"></button>
+            <button class="color" style="background-color:#8D775F;"></button>
+            <button class="color" style="background-color:#F75590;"></button>
+            <button class="color" style="background-color:#2C0E37;"></button>
+            <button class="color" style="background-color:#E09891;"></button>
+            <button class="color" style="background-color:#ADBCA5;"></button>
+            <button class="color" style="background-color:#119DA4;"></button>
           </div>
           <i class="fas fa-palette"></i>
             </div>
@@ -91,6 +91,7 @@ let renderNotes = () => {
         `;
     });
     deleteBtnsEventListner();
+    changeColorBcEventListener();
   }
 };
 let deleteNote = (title, note) => {
@@ -172,6 +173,7 @@ let lightBoxEventLister = (e) => {
     e.getElementsByTagName("h4")[0].innerHTML = newNoteTitle;
     e.getElementsByTagName("p")[0].innerHTML = newNoteText;
     lightbox.classList.remove("active");
+    changeColorBcEventListener();
   });
 };
 
@@ -200,7 +202,6 @@ let changeColorBC = (colorDiv) => {
     if (element.title == noteTitle && element.text == noteText) {
       element.bcColor = colorDiv.style.backgroundColor;
       updateLocalStorge();
-      changeColorBcEventListener();
     }
   });
 };
