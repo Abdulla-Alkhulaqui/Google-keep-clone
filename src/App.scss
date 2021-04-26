@@ -1,4 +1,6 @@
 @import "./sass/header";
+@import "./sass/config";
+
 * {
   margin: 0;
   padding: 0;
@@ -115,15 +117,65 @@ body {
             // -webkit-box-shadow: 5px 5px 5px 5px #000000;
             box-shadow: 0px 0px 2px 2px #ffffff2d;
           }
+          &:hover + .delete-btn-container {
+            opacity: 1;
+            transition: 0.2s;
+          }
         }
         .delete-btn-container {
+          opacity: 0;
           padding: 10px;
           position: absolute;
           right: 0;
           bottom: 0;
           margin: 10px;
           i {
+            display: inline;
+
             color: #fff;
+            margin: 0 10px;
+          }
+          &:hover {
+            opacity: 1;
+            padding: 10px;
+
+            transition: 0.2s;
+          }
+          .change-color {
+            display: inline;
+            &:hover .fa-palette {
+              border-radius: 50px;
+              background-color: rgba(255, 255, 255, 0.226);
+            }
+            &:hover .color-box {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .fa-palette {
+              padding: 5px;
+            }
+            .color-box {
+              position: absolute;
+              display: none;
+              height: 110px;
+              width: 110px;
+              bottom: 35px;
+              right: 50px;
+              background-color: $main-color1;
+              box-shadow: 0px 0px 2px 1px #ffffff2d;
+              flex-wrap: wrap;
+              gap: 3px;
+              .color {
+                width: 30px;
+                height: 30px;
+                border-radius: 50px;
+                background-color: blue;
+                cursor: pointer;
+              }
+            }
           }
         }
       }

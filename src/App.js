@@ -67,7 +67,23 @@ let renderNotes = () => {
           </div>
         </div>
         <div class="delete-btn-container">
-          <i class="far fa-trash-alt delete-btn"></i>
+       
+        <div class="change-color">
+        <div class="color-box">
+          <div class="color"></div>
+          <div class="color"></div>
+          <div class="color"></div>
+          <div class="color"></div>
+          <div class="color"></div>
+          <div class="color"></div>
+          <div class="color"></div>
+          <div class="color"></div>
+          <div class="color"></div>
+        </div>
+        <i class="fas fa-palette"></i>
+          </div>
+        <i class="far fa-trash-alt delete-btn"></i>
+          
         </div>
       </div>
         `;
