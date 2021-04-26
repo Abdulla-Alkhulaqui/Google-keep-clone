@@ -92,6 +92,7 @@ body {
         position: relative;
         width: 350px;
         border-radius: 20px;
+        transition: 0.5 ease-in-out;
         .note-element {
           position: relative;
           border-radius: 20px;
@@ -174,6 +175,7 @@ body {
                 border-radius: 50px;
                 background-color: blue;
                 cursor: pointer;
+                border: none;
               }
             }
           }

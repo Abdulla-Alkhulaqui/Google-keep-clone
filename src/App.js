@@ -20,6 +20,7 @@ saveBtn.addEventListener("click", () => {
   if (!emptyInputs) {
     newNote.title = newNoteTitle;
     newNote.text = newNoteText;
+    newNote.bcColor = "#202124";
 
     noteList.push(newNote);
     updateLocalStorge();
@@ -53,7 +54,9 @@ let renderNotes = () => {
   if (noteList.length !== 0) {
     noteList.map((note) => {
       noteContainer.innerHTML += `
-      <div class="note-element-container">
+      <div class="note-element-container" style="background-color:${
+        note.bcColor
+      };" >
         <div class="note-element" onClick="lightBoxEventLister(this);">
           <div class="note-title">
             <h4>${note.title}</h4>
@@ -69,21 +72,20 @@ let renderNotes = () => {
         <div class="delete-btn-container">
        
         <div class="change-color">
-        <div class="color-box">
-          <div class="color"></div>
-          <div class="color"></div>
-          <div class="color"></div>
-          <div class="color"></div>
-          <div class="color"></div>
-          <div class="color"></div>
-          <div class="color"></div>
-          <div class="color"></div>
-          <div class="color"></div>
-        </div>
-        <i class="fas fa-palette"></i>
+          <div class="color-box">
+            <button class="color" style="background-color:#1b1b1b;"></button>
+            <button class="color" style="background-color:#143642;"></button>
+            <button class="color" style="background-color:#8A3033;"></button>
+            <button class="color" style="background-color:#020887;"></button>
+            <button class="color" style="background-color:#C6EBBE;"></button>
+            <button class="color" style="background-color:#7AC74F;"></button>
+            <button class="color" style="background-color:#EC9A29;"></button>
+            <button class="color" style="background-color:#A8201A;"></button>
+            <button class="color" style="background-color:#0F8B8D;"></button>
           </div>
-        <i class="far fa-trash-alt delete-btn"></i>
-          
+          <i class="fas fa-palette"></i>
+            </div>
+          <i class="far fa-trash-alt delete-btn"></i>
         </div>
       </div>
         `;
@@ -137,7 +139,7 @@ let lightBoxEventLister = (e) => {
       lightbox.removeChild(lightbox.firstChild);
     } */
   lightbox.innerHTML = `
-    <div class="note-element">
+    <div class="note-element" style="background-color:${e.parentElement.style.backgroundColor};">
       <div class="title-input">
             <input type="text" id="note-title-lightbox" placeholder="Title" value="${noteTitle}" />
       </div>
@@ -175,4 +177,30 @@ let lightBoxEventLister = (e) => {
 
 window.addEventListener("load", () => {
   renderNotes();
+  changeColorBcEventListener();
 });
+
+//color-btns
+
+let changeColorBcEventListener = () => {
+  let colorDivs = document.getElementsByClassName("color");
+  for (let i = 0; i < colorDivs.length; i++) {
+    colorDivs[i].addEventListener("click", () => {
+      changeColorBC(colorDivs[i]);
+    });
+  }
+};
+
+let changeColorBC = (colorDiv) => {
+  let parent = colorDiv.parentElement.parentElement.parentElement.parentElement;
+  parent.style.backgroundColor = colorDiv.style.backgroundColor;
+  let noteTitle = parent.getElementsByTagName("h4")[0].innerHTML;
+  let noteText = parent.getElementsByTagName("p")[0].innerHTML;
+  noteList.forEach((element, index) => {
+    if (element.title == noteTitle && element.text == noteText) {
+      element.bcColor = colorDiv.style.backgroundColor;
+      updateLocalStorge();
+      changeColorBcEventListener();
+    }
+  });
+};

@@ -206,6 +206,8 @@ body main .notes-container .note-element-container {
   position: relative;
   width: 350px;
   border-radius: 20px;
+  -webkit-transition: 0.5 ease-in-out;
+  transition: 0.5 ease-in-out;
 }
 
 html main .notes-container .note-element-container .note-element,
@@ -330,6 +332,7 @@ body main .notes-container .note-element-container .delete-btn-container .change
   border-radius: 50px;
   background-color: blue;
   cursor: pointer;
+  border: none;
 }
 
 ::-webkit-scrollbar {
