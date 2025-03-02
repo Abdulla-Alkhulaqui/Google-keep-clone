@@ -1,3 +1,1 @@
-# Google-Keep-Clone
-
-https://abdulla-alkhulaqui.github.io/Google-Keep-Clone/
+## Note taking app
